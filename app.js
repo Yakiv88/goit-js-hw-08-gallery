@@ -126,6 +126,7 @@ window.addEventListener('keyup', onCloseModal);
 function onCloseModal(e) {
     if (e.key === "Escape"|| e.target.nodeName === 'BUTTON') {
       lightboxEl.classList.toggle('is-open');
+      window.removeEventListener('keyup', onCloseModal);
     }
 }   
 

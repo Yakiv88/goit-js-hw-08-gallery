@@ -102,32 +102,31 @@ function onOpenModal(e) {
   if (e.target.nodeName !== 'IMG') {
     return
   }
-    lightboxEl.classList.toggle('is-open');
+    lightboxEl.classList.add('is-open');
   lightboxImageEl.src = e.target.src;
     lightboxImageEl.alt = e.target.alt;
     
 }
 
-// //--------------- CloseModalESC--------
+// //--------------- CloseModal ESC--------
 window.addEventListener('keyup', onCloseModal);
-// window.addEventListener('keyup', onCloseModalESC);
 
-// function closeModalESC(e) {
-//   if (e.key !== "Escape") {
-//     return;
-//   }
-//   onCloseModalESC( );
-// }
-// onCloseModalESC(){
-//   lightboxEl.classList.toggle('is-open');
-// }
+
 
 // //--------------- CloseModal--------
 function onCloseModal(e) {
-    if (e.key === "Escape"|| e.target.nodeName === 'BUTTON') {
-      lightboxEl.classList.toggle('is-open');
-      window.removeEventListener('keyup', onCloseModal);
-    }
-}   
+  if (
+    e.key === "Escape"||
+    e.target.nodeName === 'BUTTON') {
+    lightboxEl.classList.remove('is-open')
+  } 
+}
 
 
+
+// function onCloseModalESC(e) {
+//  if (lightboxEl.classList.contains('is-open')) {
+//    e.key === "Escape"
+//    window.removeEventListener('keyup', onCloseModalESC);
+//    lightboxEl.classList.remove('is-open');
+// }}
